@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Star</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="form-screen" class="screen">
+    <h1>Find Your Star</h1>
+
+    <!-- Q1: multiple choice -->
+    <p class="question">1. What type of star do you like?</p>
+    <div class="choices">
+      <label><input type="radio" name="starType" value="blue">Blue &amp; blazing hot</label>
+      <label><input type="radio" name="starType" value="golden">Golden, like the Sun</label>
+      <label><input type="radio" name="starType" value="red_dwarf">Small &amp; deep red</label>
+      <label><input type="radio" name="starType" value="red_giant">A huge red giant</label>
+    </div>
+
+    <!-- Q2: short answer -->
+    <p class="question">2. What will you name your star?</p>
+    <input type="text" id="starName" maxlength="24" placeholder="Star name..." autocomplete="off">
+
+    <!-- Q3 GOES HERE — tell me what it is and I'll wire it in -->
+
+    <button id="submit-btn">Find my Star</button>
+  </div>
+
+  <div id="wait-screen" class="screen hidden">
+    <h1>Now press the button ✨</h1>
+  </div>
+
+  <div id="done-screen" class="screen hidden">
+    <h1>Look up at the screen 🌌</h1>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
