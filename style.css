@@ -3,9 +3,8 @@
 html, body {
   height: 100%;
   background-color: #000;
-  /* PNG background sized WELL beyond the screen edges */
   background-image: url("assets/background.png");
-  background-size: 150% auto;      /* 150% of viewport width → big margins cropped off */
+  background-size: 150% auto;
   background-position: center center;
   background-repeat: no-repeat;
   color: #fff;
@@ -23,7 +22,7 @@ html, body {
   text-align: center;
 }
 
-.hidden { display: none; }
+.hidden { display: none !important; }
 
 h1 { font-weight: 300; letter-spacing: 2px; }
 .question { font-size: 1.05rem; opacity: 0.9; }
@@ -49,7 +48,9 @@ h1 { font-weight: 300; letter-spacing: 2px; }
   width: min(320px, 80vw);
 }
 
-/* White-outlined black button */
+
+#form-hint { font-size: 0.85rem; opacity: 0.8; }
+
 #submit-btn {
   background: #000;
   color: #fff;
@@ -59,6 +60,40 @@ h1 { font-weight: 300; letter-spacing: 2px; }
   font-size: 1.1rem;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: background 0.2s;
 }
 #submit-btn:active { background: #222; }
+
+
+#loading-screen { background: #000; }
+#loading-text {
+  font-size: 1.6rem;
+  font-weight: 200;
+  letter-spacing: 4px;
+  animation: pulse 2.5s ease infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+
+#result-card { max-width: 82vw; max-height: 68vh; opacity: 0; }
+#result-card.show {
+  animation: cardIn 2.5s ease forwards, bob 4s ease-in-out 2.5s infinite;
+}
+@keyframes cardIn { to{opacity:1} }
+@keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+.button-row { display: flex; gap: 14px; margin-top: 26px; }
+#download-btn, #club-btn {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#download-btn { font-size: 1rem; letter-spacing: 1px; }
+.club-small { font-size: 0.7rem; opacity: 0.85; }
+.club-big   { font-size: 1.1rem; font-weight: 600; }

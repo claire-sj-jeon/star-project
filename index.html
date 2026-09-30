@@ -11,7 +11,6 @@
   <div id="form-screen" class="screen">
     <h1>Find Your Star</h1>
 
-    <!-- Q1: multiple choice -->
     <p class="question">1. What type of star do you like?</p>
     <div class="choices">
       <label><input type="radio" name="starType" value="blue">Blue &amp; blazing hot</label>
@@ -20,21 +19,27 @@
       <label><input type="radio" name="starType" value="red_giant">A huge red giant</label>
     </div>
 
-    <!-- Q2: short answer -->
     <p class="question">2. What will you name your star?</p>
     <input type="text" id="starName" maxlength="24" placeholder="Star name..." autocomplete="off">
 
-    <!-- Q3 GOES HERE — tell me what it is and I'll wire it in -->
+    <p id="form-hint" class="hidden">please answer both questions ✦</p>
 
     <button id="submit-btn">Find my Star</button>
   </div>
 
-  <div id="wait-screen" class="screen hidden">
-    <h1>Now press the button ✨</h1>
+  <div id="loading-screen" class="screen hidden">
+    <div id="loading-text">finding your star...</div>
   </div>
 
-  <div id="done-screen" class="screen hidden">
-    <h1>Look up at the screen 🌌</h1>
+  <div id="result-screen" class="screen hidden">
+    <img id="result-card" alt="Your star">
+    <div class="button-row">
+      <a id="download-btn" download="my-star.jpg">Download image</a>
+      <a id="club-btn" href="https://forms.cloud.microsoft/r/FGBhin9jii" target="_blank" rel="noopener">
+        <span class="club-small">if you enjoyed this,</span>
+        <span class="club-big">join ASTRO club!</span>
+      </a>
+    </div>
   </div>
 
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
